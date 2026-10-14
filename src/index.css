@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --color-alabaster: #FBF9F5;
+  --color-oat: #F3EFE6;
+  --color-stonewarm: #E6E0D4;
+  --color-charcoal: #1C1917;
+  --color-muted: #69635C;
+  --color-terracotta: #8C5A3C;
+  --color-sage: #4A5D4E;
+
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FBF9F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D5CBB8;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #8C5A3C;
+}
+
+/* Option Card Styling */
+.option-card {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.option-card.active {
+  border-color: #1C1917;
+  background-color: #1C1917;
+  color: #FBF9F5;
+}
+.option-card.active .sub-price {
+  color: #D6D1C7;
+}
+
+/* Swatch Button */
+.swatch-btn {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.swatch-btn.active {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px #FBF9F5, 0 0 0 4px #1C1917;
+}
+
+/* Candle flame animations */
+@keyframes flame-flicker {
+  0%, 100% {
+    transform: scale(1) rotate(-0.5deg);
+    opacity: 0.95;
+  }
+  25% {
+    transform: scale(1.05, 0.95) rotate(1deg);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.95, 1.05) rotate(-1deg);
+    opacity: 0.9;
+  }
+  75% {
+    transform: scale(1.02, 0.98) rotate(0.5deg);
+    opacity: 0.98;
+  }
+}
+
+.animate-flame {
+  animation: flame-flicker 1.8s ease-in-out infinite alternate;
+}
