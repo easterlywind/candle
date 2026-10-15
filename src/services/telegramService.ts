@@ -94,48 +94,74 @@ export const pushToTelegramBot = async (
   message: string,
   photoFile?: File | null
 ): Promise<PushResult> => {
-  const { botToken, chatId } = STORE_CONFIG;
-
-  if (!botToken || !chatId) {
-    // Mode mô phỏng khi chưa điền token production
-    const { promise, resolve } = Promise.withResolvers<void>();
-    setTimeout(resolve, 800);
-    await promise;
-    return { success: true, simulated: true };
-  }
+  // 1. Thử gửi qua Backend API route (/api/telegram) - an toàn, giấu kín token
   try {
+    const formData = new FormData();
+    formData.append('message', message);
     if (photoFile) {
-      const formData = new FormData();
-      formData.append('chat_id', chatId);
       formData.append('photo', photoFile);
-      formData.append('caption', message);
+    }
 
-      const res = await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+    const res = await fetch('/api/telegram', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (res.ok) {
+      const data = (await res.json()) as PushResult;
+      return data;
+    }
+
+    const errData = (await res.json().catch(() => ({}))) as { error?: string };
+    throw new Error(errData.error || `Server API response status: ${res.status}`);
+  } catch (backendErr: unknown) {
+    console.warn('[Telegram Service] Gửi qua /api/telegram thất bại hoặc không có backend, thử fallback:', backendErr);
+
+    const { botToken, chatId } = STORE_CONFIG;
+
+    // 2. Chế độ mô phỏng khi chưa có token ở cả backend lẫn frontend
+    if (!botToken || !chatId) {
+      const { promise, resolve } = Promise.withResolvers<void>();
+      setTimeout(resolve, 800);
+      await promise;
+      return { success: true, simulated: true };
+    }
+
+    // 3. Fallback: Gửi trực tiếp từ client nếu có token ở frontend env
+    try {
+      if (photoFile) {
+        const clientFormData = new FormData();
+        clientFormData.append('chat_id', chatId);
+        clientFormData.append('photo', photoFile);
+        clientFormData.append('caption', message);
+
+        const res = await fetch(`https://api.telegram.org/bot${botToken}/sendPhoto`, {
+          method: 'POST',
+          body: clientFormData,
+        });
+
+        if (!res.ok) {
+          throw new Error(`Telegram Photo API status: ${res.status}`);
+        }
+        return { success: true, simulated: false };
+      }
+
+      const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
         method: 'POST',
-        body: formData,
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text: message,
+        }),
       });
 
       if (!res.ok) {
-        throw new Error(`Telegram Photo API status: ${res.status}`);
+        throw new Error(`Telegram Message API status: ${res.status}`);
       }
       return { success: true, simulated: false };
+    } catch (err: unknown) {
+      const errorMsg = err instanceof Error ? err.message : 'Unknown Telegram API error';
+      return { success: false, simulated: false, error: errorMsg };
     }
-
-    const res = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        chat_id: chatId,
-        text: message,
-      }),
-    });
-
-    if (!res.ok) {
-      throw new Error(`Telegram Message API status: ${res.status}`);
-    }
-    return { success: true, simulated: false };
-  } catch (err) {
-    const errorMsg = err instanceof Error ? err.message : 'Unknown Telegram API error';
-    return { success: false, simulated: false, error: errorMsg };
   }
 };
