@@ -218,7 +218,7 @@ export const TEALIGHT_SHAPES: TealightShapeItem[] = [
   {
     name: 'Cánh Bướm',
     desc: 'Đường nét bay bổng tinh tế',
-    image: 'https://images.pexels.com/photos/8871512/pexels-photo-8871512.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/tealight/butterfly.png',
   },
   {
     name: 'Cây Thông',
