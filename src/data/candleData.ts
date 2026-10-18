@@ -223,17 +223,17 @@ export const TEALIGHT_SHAPES: TealightShapeItem[] = [
   {
     name: 'Cây Thông',
     desc: 'Không khí lễ hội Noel ấm cúng',
-    image: 'https://images.pexels.com/photos/35866208/pexels-photo-35866208.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/tealight/tree.png',
   },
   {
     name: 'Quả Chuông',
     desc: 'Dáng chuông Giáng sinh độc đáo',
-    image: 'https://images.pexels.com/photos/17316961/pexels-photo-17316961.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/tealight/bell.png',
   },
   {
     name: 'Ngôi Sao',
     desc: 'Ánh sao 5 cánh lấp lánh',
-    image: 'https://images.pexels.com/photos/30128466/pexels-photo-30128466.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/tealight/star.png',
   },
 ];
 
