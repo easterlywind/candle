@@ -4,7 +4,7 @@ import type { CartItem, CustomerOrderInfo, CustomPhotoOrder } from '../types/can
 export const STORE_CONFIG = {
   botToken: import.meta.env.VITE_TELEGRAM_BOT_TOKEN ?? '',
   chatId: import.meta.env.VITE_TELEGRAM_CHAT_ID ?? '',
-  shopTelegramUsername: import.meta.env.VITE_TELEGRAM_SHOP_USERNAME ?? 'latelier_candle_bot',
+  shopTelegramUsername: import.meta.env.VITE_TELEGRAM_SHOP_USERNAME ?? 'moodscent_bot',
   hotline: '0988.888.888',
   bank: {
     bankId: 'MB',
