@@ -198,22 +198,22 @@ export const TEALIGHT_SHAPES: TealightShapeItem[] = [
   {
     name: 'Hình Vuông',
     desc: 'Cạnh vuông vức hiện đại',
-    image: 'https://images.pexels.com/photos/20158095/pexels-photo-20158095.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/tealight/square.png',
   },
   {
     name: 'Hình Tròn',
     desc: 'Tròn đều cổ điển thanh lịch',
-    image: 'https://images.pexels.com/photos/289756/pexels-photo-289756.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/tealight/round.png',
   },
   {
     name: 'Trái Tim',
     desc: 'Tạo hình tình yêu ngọt ngào',
-    image: 'https://images.pexels.com/photos/28176437/pexels-photo-28176437.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/tealight/heart.png',
   },
   {
     name: 'Bông Hoa',
     desc: 'Cánh hoa xòe mềm mại',
-    image: 'https://images.pexels.com/photos/11497341/pexels-photo-11497341.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: '/images/tealight/flower.png',
   },
   {
     name: 'Cánh Bướm',

@@ -165,32 +165,31 @@ export const TealightStudio: React.FC<TealightStudioProps> = ({
                   key={shape.name}
                   type="button"
                   onClick={() => handleSelectShape(idx)}
-                  className={`group text-left rounded-2xl border transition-all cursor-pointer overflow-hidden flex flex-col justify-between ${
+                  className={`group text-left rounded-2xl border transition-all cursor-pointer overflow-hidden flex flex-col justify-between shadow-2xs hover:shadow-md ${
                     isActive
-                      ? 'border-charcoal bg-alabaster shadow-md ring-2 ring-charcoal/20'
-                      : 'border-stonewarm bg-alabaster/60 hover:border-charcoal/40 hover:bg-white'
+                      ? 'border-charcoal bg-white ring-2 ring-charcoal/25 shadow-md scale-[1.01]'
+                      : 'border-stonewarm bg-white/90 hover:border-charcoal/50 hover:bg-white'
                   }`}
                 >
-                  <div className="relative h-28 w-full overflow-hidden bg-oat">
+                  <div className="relative aspect-4/3 w-full overflow-hidden bg-[#0a0a0a] flex items-center justify-center p-2.5 border-b border-stonewarm/40">
                     <img
                       src={shape.image}
                       alt={shape.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                       loading="lazy"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent" />
                     {isActive && (
-                      <span className="absolute top-2 right-2 w-5 h-5 rounded-full bg-charcoal text-alabaster flex items-center justify-center text-xs font-bold shadow-sm">
+                      <span className="absolute top-2.5 right-2.5 w-5 h-5 rounded-full bg-charcoal text-alabaster flex items-center justify-center text-xs font-bold shadow-md">
                         ✓
                       </span>
                     )}
                   </div>
 
-                  <div className="p-3 text-center">
-                    <span className="font-semibold text-xs sm:text-sm text-charcoal block group-hover:text-terracotta">
+                  <div className="p-3 text-center bg-white flex-1 flex flex-col justify-center">
+                    <span className="font-semibold text-xs sm:text-sm text-charcoal block group-hover:text-terracotta transition-colors">
                       {shape.name}
                     </span>
-                    <span className="text-[10px] text-muted block mt-0.5 truncate">
+                    <span className="text-[11px] text-muted block mt-0.5 truncate">
                       {shape.desc}
                     </span>
                   </div>
