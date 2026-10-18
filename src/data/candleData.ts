@@ -56,7 +56,7 @@ export const JAR_VESSELS: JarVesselItem[] = [
     id: 'cork_glass',
     name: 'Hũ Thủy Tinh Màu Nút Bần',
     desc: 'Nút bần gỗ mộc mạc, giữ hương thơm bền lâu trong không gian.',
-    image: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=700&q=80',
+    image: 'https://images.unsplash.com/photo-1608181831558-8686cf889b78?auto=format&fit=crop&w=700&q=80',
     sizes: [
       { ml: '100ml', price: 139000 },
       { ml: '200ml', price: 229000 },
@@ -102,7 +102,7 @@ export const JAR_VESSELS: JarVesselItem[] = [
     id: 'clear_glass',
     name: 'Cốc Thủy Tinh Trong Suốt',
     desc: 'Thấy rõ lớp sáp màu nghệ thuật bên trong khi ngọn lửa thắp sáng.',
-    image: 'https://images.pexels.com/photos/6311832/pexels-photo-6311832.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/7407308/pexels-photo-7407308.jpeg?auto=compress&cs=tinysrgb&w=600',
     sizes: [
       { ml: '70ml', price: 109000 },
       { ml: '100ml', price: 139000 },
@@ -139,7 +139,7 @@ export const JAR_VESSELS: JarVesselItem[] = [
     id: 'cement_cup',
     name: 'Cốc Xi Măng Thủ Công',
     desc: 'Vẻ đẹp Wabi-sabi tối giản, bề mặt vân đá thô mộc độc bản từng cốc.',
-    image: 'https://images.unsplash.com/photo-1608181831558-8686cf889b78?auto=format&fit=crop&w=700&q=80',
+    image: 'https://images.pexels.com/photos/25392196/pexels-photo-25392196.jpeg?auto=compress&cs=tinysrgb&w=600',
     sizes: [
       { ml: '120ml', price: 159000 },
       { ml: '220ml', price: 259000 },
@@ -198,7 +198,7 @@ export const TEALIGHT_SHAPES: TealightShapeItem[] = [
   {
     name: 'Hình Vuông',
     desc: 'Cạnh vuông vức hiện đại',
-    image: 'https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/20158095/pexels-photo-20158095.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Hình Tròn',
@@ -208,32 +208,32 @@ export const TEALIGHT_SHAPES: TealightShapeItem[] = [
   {
     name: 'Trái Tim',
     desc: 'Tạo hình tình yêu ngọt ngào',
-    image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/28176437/pexels-photo-28176437.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Bông Hoa',
     desc: 'Cánh hoa xòe mềm mại',
-    image: 'https://images.pexels.com/photos/5566042/pexels-photo-5566042.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/11497341/pexels-photo-11497341.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Cánh Bướm',
     desc: 'Đường nét bay bổng tinh tế',
-    image: 'https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/8871512/pexels-photo-8871512.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Cây Thông',
     desc: 'Không khí lễ hội Noel ấm cúng',
-    image: 'https://images.unsplash.com/photo-1512474932049-78ac69ede12c?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/35866208/pexels-photo-35866208.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Quả Chuông',
     desc: 'Dáng chuông Giáng sinh độc đáo',
-    image: 'https://images.unsplash.com/photo-1513297887119-d46091b24bfa?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/17316961/pexels-photo-17316961.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Ngôi Sao',
     desc: 'Ánh sao 5 cánh lấp lánh',
-    image: 'https://images.unsplash.com/photo-1509198397868-475647b2a1e5?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/30128466/pexels-photo-30128466.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
 ];
 
@@ -266,43 +266,43 @@ export const MOLD_SHAPES: MoldShapeItem[] = [
     name: 'Hoa Cúc',
     price: 85000,
     desc: 'Từng cánh cúc nở rộ thanh nhã, nét điêu khắc sắc sảo.',
-    image: 'https://images.unsplash.com/photo-1606041008023-472dfb5e530f?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/30428755/pexels-photo-30428755.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Hoa Mẫu Đơn',
     price: 95000,
     desc: 'Bông mẫu đơn xếp tầng quyền quý, biểu tượng của sự may mắn thịnh vượng.',
-    image: 'https://images.pexels.com/photos/5566042/pexels-photo-5566042.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/15791151/pexels-photo-15791151.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Hoa Tulip',
     price: 89000,
     desc: 'Dáng búp tulip hé nở yêu kiều phong cách Hàn Quốc.',
-    image: 'https://images.unsplash.com/photo-1520763185298-1b434c919102?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/7234625/pexels-photo-7234625.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Trái Tim Điêu Khắc',
     price: 79000,
     desc: 'Khối trái tim 3D chạm khắc tinh tế, thích hợp làm quà tặng tình yêu.',
-    image: 'https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/27089756/pexels-photo-27089756.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Hình Cầu Rubik (Bubble)',
     price: 99000,
     desc: 'Khối rubik bong bóng phong cách Nordic tối giản cực thịnh hành trên Instagram.',
-    image: 'https://images.unsplash.com/photo-1602874801007-bd458bb1b8b8?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/7828220/pexels-photo-7828220.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Gấu Teddy',
     price: 95000,
     desc: 'Chú gấu bông đáng yêu thắt nơ xinh xắn, quà tặng sinh nhật được yêu thích.',
-    image: 'https://images.unsplash.com/photo-1559454403-b8fb88521f11?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.pexels.com/photos/18852198/pexels-photo-18852198.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
   {
     name: 'Bươm Bướm',
     price: 79000,
     desc: 'Cánh bướm mong manh đậu nhẹ, nét chạm khắc độc đáo giàu tính nghệ thuật.',
-    image: 'https://images.pexels.com/photos/326055/pexels-photo-326055.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://images.pexels.com/photos/34336250/pexels-photo-34336250.jpeg?auto=compress&cs=tinysrgb&w=600',
   },
 ];
 
