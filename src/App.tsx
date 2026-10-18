@@ -95,7 +95,7 @@ export const App: React.FC = () => {
       unitPrice = pricing.unitPrice;
       qty = jarState.qty;
       total = pricing.total;
-      image = vessel.image;
+      image = colorObj.image || vessel.image;
 
       const parts = [];
       if (jarState.labelText.trim()) parts.push(`Nhãn tên: "${jarState.labelText.trim()}"`);

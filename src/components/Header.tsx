@@ -33,14 +33,21 @@ export const Header: React.FC<HeaderProps> = ({
           <a
             href="#"
             onClick={handleLogoClick}
-            className="flex flex-col cursor-pointer group"
+            className="flex items-center space-x-3 cursor-pointer group"
           >
-            <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-charcoal group-hover:text-terracotta transition-colors">
-              L’ATELIER
-            </span>
-            <span className="text-[10px] tracking-[0.25em] uppercase text-muted -mt-1 font-medium">
-              Bespoke Candle Studio
-            </span>
+            <img
+              src="/logo.png"
+              alt="MOOD&SCENT"
+              className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl object-cover shadow-2xs group-hover:scale-105 transition-transform"
+            />
+            <div className="flex flex-col">
+              <span className="font-serif text-2xl sm:text-3xl font-semibold tracking-tight text-charcoal group-hover:text-terracotta transition-colors">
+                MOOD &amp; SCENT
+              </span>
+              <span className="text-[10px] tracking-[0.22em] uppercase text-muted -mt-0.5 font-medium">
+                Bespoke Candle Studio · 2026
+              </span>
+            </div>
           </a>
 
           {/* Right Action: Cart Button */}

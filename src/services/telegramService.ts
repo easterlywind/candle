@@ -9,11 +9,11 @@ export const STORE_CONFIG = {
   bank: {
     bankId: 'MB',
     accountNo: '0988888888',
-    accountName: 'L ATELIER CANDLE STUDIO',
+    accountName: 'MOOD AND SCENT STUDIO',
   },
 };
 
-export const generateOrderCode = (prefix = 'LAT'): string => {
+export const generateOrderCode = (prefix = 'MOOD'): string => {
   const timestamp = Date.now().toString(36).toUpperCase().slice(-5);
   const random = Math.floor(100 + Math.random() * 900);
   return `${prefix}-${timestamp}${random}`;

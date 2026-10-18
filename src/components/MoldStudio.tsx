@@ -156,7 +156,7 @@ export const MoldStudio: React.FC<MoldStudioProps> = ({
                       : 'border-stonewarm bg-alabaster/60 hover:border-charcoal/40 hover:bg-white'
                   }`}
                 >
-                  <div className="relative h-44 w-full overflow-hidden bg-oat">
+                  <div className="relative aspect-4/3 w-full overflow-hidden bg-oat border-b border-stonewarm/40">
                     <img
                       src={m.image}
                       alt={m.name}

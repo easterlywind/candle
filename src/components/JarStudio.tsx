@@ -189,7 +189,7 @@ export const JarStudio: React.FC<JarStudioProps> = ({
                   }`}
                 >
                   {/* Photo of Vessel */}
-                  <div className="relative h-44 w-full overflow-hidden bg-oat">
+                  <div className="relative aspect-4/3 w-full overflow-hidden bg-oat border-b border-stonewarm/40">
                     <img
                       src={vessel.image}
                       alt={vessel.name}
@@ -303,36 +303,57 @@ export const JarStudio: React.FC<JarStudioProps> = ({
                     key={c.name}
                     type="button"
                     onClick={() => handleSelectColor(idx)}
-                    className={`flex items-center space-x-3.5 p-4 rounded-2xl border text-left transition cursor-pointer ${
+                    className={`flex items-center space-x-3.5 p-3.5 rounded-2xl border text-left transition cursor-pointer shadow-2xs ${
                       isActive
-                        ? 'border-charcoal bg-charcoal text-alabaster shadow-md'
-                        : 'border-stonewarm bg-alabaster/70 hover:border-charcoal/40 text-charcoal hover:bg-white'
+                        ? 'border-charcoal bg-charcoal text-alabaster shadow-md scale-[1.01]'
+                        : 'border-stonewarm bg-white/90 hover:border-charcoal/40 text-charcoal hover:bg-white'
                     }`}
                   >
-                    <span
-                      className="w-8 h-8 rounded-full border border-charcoal/20 shrink-0 shadow-sm"
-                      style={{ backgroundColor: c.hex }}
-                    />
-                    <div className="flex-1">
-                      <span className="font-semibold text-sm sm:text-base block">{c.name}</span>
+                    {c.image ? (
+                      <div className="w-14 h-14 rounded-xl overflow-hidden bg-neutral-950 shrink-0 border border-stonewarm/50 p-1 flex items-center justify-center">
+                        <img
+                          src={c.image}
+                          alt={c.name}
+                          className="w-full h-full object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ) : (
+                      <span
+                        className="w-9 h-9 rounded-full border border-charcoal/20 shrink-0 shadow-sm"
+                        style={{ backgroundColor: c.hex }}
+                      />
+                    )}
+                    <div className="flex-1 min-w-0">
+                      <span className="font-semibold text-sm sm:text-base block truncate">{c.name}</span>
                       <span className={`text-[11px] ${isActive ? 'text-stonewarm/70' : 'text-muted'}`}>
                         Mã màu: {c.hex}
                       </span>
                     </div>
-                    {isActive && <span className="text-sm font-bold">✓</span>}
+                    {isActive && <span className="text-sm font-bold shrink-0">✓</span>}
                   </button>
                 );
               })}
             </div>
           ) : (
-            <div className="p-6 rounded-2xl bg-oat/70 border border-stonewarm text-center space-y-3">
-              <span
-                className="w-12 h-12 rounded-full border border-charcoal/20 inline-block shadow-xs"
-                style={{ backgroundColor: currentColor.hex }}
-              />
+            <div className="p-6 rounded-2xl bg-white border border-stonewarm text-center space-y-3 shadow-2xs">
+              {currentColor.image ? (
+                <div className="w-28 h-28 rounded-2xl overflow-hidden mx-auto shadow-sm border border-stonewarm/60 bg-neutral-950 p-1.5 flex items-center justify-center">
+                  <img
+                    src={currentColor.image}
+                    alt={currentColor.name}
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+              ) : (
+                <span
+                  className="w-12 h-12 rounded-full border border-charcoal/20 inline-block shadow-xs"
+                  style={{ backgroundColor: currentColor.hex }}
+                />
+              )}
               <p className="font-serif text-lg font-bold text-charcoal">{currentColor.name}</p>
               <p className="text-xs text-muted max-w-md mx-auto leading-relaxed">
-                Dòng sản phẩm này giữ nguyên màu vỏ đặc trưng nguyên bản (Apothecary / Travel Tin kim loại) cổ điển sang trọng, không dùng phẩm màu công nghiệp.
+                Dòng sản phẩm này giữ nguyên màu vỏ đặc trưng nguyên bản (Apothecary / Vỏ hộp thiếc kim loại) cổ điển sang trọng, không dùng phẩm màu công nghiệp.
               </p>
             </div>
           )}

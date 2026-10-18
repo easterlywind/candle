@@ -126,6 +126,6 @@ const server = createServer(async (req, res) => {
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`🕯️ L'Atelier Server đang chạy tại http://0.0.0.0:${PORT}`);
+  console.log(`🕯️ MOOD & SCENT Server đang chạy tại http://0.0.0.0:${PORT}`);
   console.log(`Telegram Bot Status: ${BOT_TOKEN && CHAT_ID ? '✅ Đã cấu hình' : '⚠️ Chế độ mô phỏng (chưa cấu hình Token)'}`);
 });
