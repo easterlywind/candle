@@ -79,13 +79,9 @@ export const CustomPhotoSection: React.FC<CustomPhotoSectionProps> = ({
           spread: 60,
           origin: { y: 0.7 },
         });
-
-        const directLink = generateTelegramDirectUrl(telegramMessage);
-
         setStatusMessage({
           type: 'success',
-          text: `Tuyệt vời! Yêu cầu đặt mẫu theo ảnh riêng (Mã: ${orderCode}) đã được đẩy trực tiếp về hệ thống Telegram của xưởng L’Atelier. Chúng mình sẽ liên hệ với bạn trong thời gian sớm nhất!`,
-          directUrl: directLink,
+          text: `Tuyệt vời! Yêu cầu đặt mẫu theo ảnh riêng (Mã: ${orderCode}) đã được hệ thống tự động gửi về Telegram của xưởng MOOD & SCENT. Bạn không cần làm gì thêm, xưởng sẽ liên hệ tư vấn qua SĐT/Zalo sớm nhất!`,
         });
 
         // Reset form

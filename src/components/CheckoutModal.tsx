@@ -131,14 +131,17 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
                   Đặt Hàng Thành Công
                 </span>
                 <h3 className="font-serif text-3xl font-semibold mt-1 text-charcoal">
-                  Cảm ơn bạn đã lựa chọn L'Atelier!
+                  Cảm ơn bạn đã lựa chọn MOOD &amp; SCENT!
                 </h3>
                 <p className="text-sm text-muted mt-2">
                   Mã đơn hàng của bạn là{' '}
                   <strong className="text-charcoal font-semibold">#{confirmedOrder.orderCode}</strong>
                 </p>
+                <div className="bg-emerald-50 text-emerald-900 text-xs px-4 py-2.5 rounded-xl border border-emerald-200 mt-3.5 inline-flex items-center space-x-2 shadow-2xs">
+                  <span className="font-bold text-emerald-600 text-sm">✓</span>
+                  <span className="font-medium">Hệ thống đã tự động gửi đơn hàng về Telegram của xưởng! Bạn không cần làm gì thêm.</span>
+                </div>
               </div>
-
               {/* VietQR Box if selected */}
               {customer.paymentMethod === 'vietqr' && (
                 <div className="bg-white rounded-2xl p-5 border border-stonewarm max-w-md mx-auto text-left space-y-4 shadow-2xs">
@@ -190,22 +193,33 @@ export const CheckoutModal: React.FC<CheckoutModalProps> = ({
               )}
 
               <div className="flex flex-wrap justify-center gap-3 pt-2">
-                <a
-                  href={confirmedOrder.telegramDirectUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-charcoal text-alabaster px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold hover:bg-terracotta transition"
-                >
-                  Mở Telegram gửi đơn cho xưởng ↗
-                </a>
-
                 <button
                   type="button"
                   onClick={handleClose}
-                  className="bg-oat text-charcoal px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold hover:bg-stonewarm transition cursor-pointer"
+                  className="bg-charcoal text-alabaster px-8 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold hover:bg-terracotta active:scale-95 transition cursor-pointer shadow-sm"
                 >
-                  Đóng &amp; Tiếp tục khám phá
+                  Hoàn tất &amp; Tiếp tục mua sắm
                 </button>
+
+                {errorNotice ? (
+                  <a
+                    href={confirmedOrder.telegramDirectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-amber-100 text-amber-900 border border-amber-300 px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold hover:bg-amber-200 transition"
+                  >
+                    Gửi đơn qua Telegram dự phòng ↗
+                  </a>
+                ) : (
+                  <a
+                    href={`https://t.me/${STORE_CONFIG.shopTelegramUsername}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-oat text-charcoal px-6 py-3.5 rounded-full text-xs uppercase tracking-wider font-semibold hover:bg-stonewarm transition border border-stonewarm"
+                  >
+                    Chat với xưởng (@{STORE_CONFIG.shopTelegramUsername}) ↗
+                  </a>
+                )}
               </div>
             </div>
           ) : (
