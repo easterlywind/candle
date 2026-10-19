@@ -212,7 +212,7 @@ export const MoldStudio: React.FC<MoldStudioProps> = ({
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-1">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 pt-1">
             {SCENTS.map((s, idx) => {
               const isActive = idx === state.scentIndex;
 
@@ -221,42 +221,35 @@ export const MoldStudio: React.FC<MoldStudioProps> = ({
                   key={s.id}
                   type="button"
                   onClick={() => handleSelectScent(idx)}
-                  className={`group text-left rounded-2xl border transition-all cursor-pointer overflow-hidden flex flex-col justify-between ${
+                  className={`group text-left rounded-2xl p-4 sm:p-5 border transition-all cursor-pointer flex flex-col justify-between shadow-2xs ${
                     isActive
-                      ? 'border-charcoal bg-alabaster shadow-md ring-2 ring-charcoal/20'
-                      : 'border-stonewarm bg-alabaster/60 hover:border-charcoal/40 hover:bg-white'
+                      ? 'border-charcoal bg-white ring-2 ring-charcoal/25 shadow-md scale-[1.01]'
+                      : 'border-stonewarm bg-white/80 hover:border-charcoal/40 hover:bg-white'
                   }`}
                 >
-                  <div className="relative h-36 w-full overflow-hidden bg-oat">
-                    <img
-                      src={s.image}
-                      alt={s.name}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal/40 via-transparent to-transparent" />
-                    {isActive && (
-                      <span className="absolute top-2.5 right-2.5 w-6 h-6 rounded-full bg-charcoal text-alabaster flex items-center justify-center text-xs font-bold shadow-sm">
-                        ✓
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="p-4 flex-1 flex flex-col justify-between space-y-1.5">
-                    <div>
-                      <h4 className="font-serif text-base font-bold text-charcoal group-hover:text-terracotta transition-colors">
+                  <div className="space-y-2">
+                    <div className="flex items-start justify-between gap-2">
+                      <h4 className="font-serif text-base sm:text-lg font-bold text-charcoal group-hover:text-terracotta transition-colors leading-snug">
                         {s.name}
                       </h4>
-                      <p className="text-xs text-muted mt-1 leading-relaxed line-clamp-2">
-                        {s.note}
-                      </p>
+                      {isActive ? (
+                        <span className="w-5 h-5 rounded-full bg-charcoal text-alabaster flex items-center justify-center text-xs font-bold shadow-2xs shrink-0 mt-0.5">
+                          ✓
+                        </span>
+                      ) : (
+                        <span className="w-5 h-5 rounded-full border border-stonewarm group-hover:border-charcoal/40 shrink-0 mt-0.5" />
+                      )}
                     </div>
+                    <p className="text-xs text-muted leading-relaxed line-clamp-3">
+                      {s.note}
+                    </p>
+                  </div>
 
-                    <div className="pt-2 text-[11px] font-semibold flex justify-end">
-                      <span className={isActive ? 'text-terracotta' : 'text-muted group-hover:text-charcoal'}>
-                        {isActive ? '● Đã chọn' : 'Chọn mùi này →'}
-                      </span>
-                    </div>
+                  <div className="pt-3 mt-3 border-t border-stonewarm/40 flex items-center justify-between text-[11px]">
+                    <span className="text-muted tracking-wide uppercase font-medium">Hương chuẩn IFRA</span>
+                    <span className={isActive ? 'font-bold text-terracotta' : 'text-muted group-hover:text-charcoal font-medium'}>
+                      {isActive ? '● Đã chọn' : 'Chọn mùi này →'}
+                    </span>
                   </div>
                 </button>
               );

@@ -16,7 +16,7 @@ export interface ScentItem {
   id: string;
   name: string;
   note: string;
-  image: string;
+  image?: string;
 }
 
 // ================= NẾN HŨ =================

@@ -327,33 +327,28 @@ export const TealightStudio: React.FC<TealightStudioProps> = ({
                     key={s.id}
                     type="button"
                     onClick={() => handleSelectScent(idx)}
-                    className={`group text-left rounded-2xl border transition-all cursor-pointer overflow-hidden flex flex-col justify-between ${
+                    className={`group text-left rounded-2xl p-4 border transition-all cursor-pointer flex flex-col justify-between shadow-2xs ${
                       isActive
-                        ? 'border-charcoal bg-alabaster shadow-md ring-2 ring-charcoal/20'
-                        : 'border-stonewarm bg-alabaster/60 hover:border-charcoal/40 hover:bg-white'
+                        ? 'border-charcoal bg-white ring-2 ring-charcoal/25 shadow-md scale-[1.01]'
+                        : 'border-stonewarm bg-white/80 hover:border-charcoal/40 hover:bg-white'
                     }`}
                   >
-                    <div className="relative h-28 w-full overflow-hidden bg-oat">
-                      <img
-                        src={s.image}
-                        alt={s.name}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        loading="lazy"
-                      />
-                      {isActive && (
-                        <span className="absolute top-2 right-2 w-5 h-5 rounded-full bg-charcoal text-alabaster flex items-center justify-center text-xs font-bold shadow-sm">
-                          ✓
+                    <div className="space-y-1.5">
+                      <div className="flex items-start justify-between gap-2">
+                        <span className="font-serif text-sm font-bold text-charcoal group-hover:text-terracotta leading-snug">
+                          {s.name}
                         </span>
-                      )}
-                    </div>
-
-                    <div className="p-3 flex-1 flex flex-col justify-between space-y-1">
-                      <span className="font-serif text-sm font-bold text-charcoal group-hover:text-terracotta">
-                        {s.name}
-                      </span>
-                      <span className="text-[11px] text-muted line-clamp-2">
+                        {isActive ? (
+                          <span className="w-4 h-4 rounded-full bg-charcoal text-alabaster flex items-center justify-center text-[10px] font-bold shadow-2xs shrink-0 mt-0.5">
+                            ✓
+                          </span>
+                        ) : (
+                          <span className="w-4 h-4 rounded-full border border-stonewarm group-hover:border-charcoal/40 shrink-0 mt-0.5" />
+                        )}
+                      </div>
+                      <p className="text-[11px] text-muted line-clamp-2 leading-relaxed">
                         {s.note}
-                      </span>
+                      </p>
                     </div>
                   </button>
                 );
