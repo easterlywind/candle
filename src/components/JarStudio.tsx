@@ -310,7 +310,7 @@ export const JarStudio: React.FC<JarStudioProps> = ({
                     }`}
                   >
                     {c.image ? (
-                      <div className="w-14 h-14 rounded-xl overflow-hidden bg-neutral-950 shrink-0 border border-stonewarm/50 p-1 flex items-center justify-center">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-neutral-950 shrink-0 border border-stonewarm/50 p-1 flex items-center justify-center">
                         <img
                           src={c.image}
                           alt={c.name}
@@ -320,7 +320,7 @@ export const JarStudio: React.FC<JarStudioProps> = ({
                       </div>
                     ) : (
                       <span
-                        className="w-9 h-9 rounded-full border border-charcoal/20 shrink-0 shadow-sm"
+                        className="w-10 h-10 rounded-full border border-charcoal/20 shrink-0 shadow-sm"
                         style={{ backgroundColor: c.hex }}
                       />
                     )}
@@ -336,25 +336,40 @@ export const JarStudio: React.FC<JarStudioProps> = ({
               })}
             </div>
           ) : (
-            <div className="p-6 rounded-2xl bg-white border border-stonewarm text-center space-y-3 shadow-2xs">
-              {currentColor.image ? (
-                <div className="w-28 h-28 rounded-2xl overflow-hidden mx-auto shadow-sm border border-stonewarm/60 bg-neutral-950 p-1.5 flex items-center justify-center">
+            <div className="max-w-xl mx-auto p-6 sm:p-8 rounded-3xl bg-white border border-stonewarm/80 text-center space-y-5 shadow-sm">
+              <div className="relative aspect-4/3 sm:aspect-16/10 w-full rounded-2xl overflow-hidden shadow-xs border border-stonewarm/60 bg-[#faf8f5] flex items-center justify-center p-4 group">
+                {currentColor.image ? (
                   <img
                     src={currentColor.image}
                     alt={currentColor.name}
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
                   />
+                ) : (
+                  <span
+                    className="w-20 h-20 rounded-full border border-charcoal/20 shadow-sm"
+                    style={{ backgroundColor: currentColor.hex }}
+                  />
+                )}
+                <span className="absolute top-3 right-3 bg-charcoal text-alabaster text-[11px] uppercase tracking-wider font-semibold px-3 py-1.5 rounded-full shadow-sm flex items-center space-x-1.5">
+                  <span className="text-emerald-400 font-bold">✓</span>
+                  <span>Chất liệu nguyên bản</span>
+                </span>
+              </div>
+
+              <div className="space-y-2">
+                <div className="inline-flex items-center space-x-2.5">
+                  <span
+                    className="w-4 h-4 rounded-full border border-charcoal/20 shrink-0 shadow-2xs"
+                    style={{ backgroundColor: currentColor.hex }}
+                  />
+                  <h4 className="font-serif text-xl sm:text-2xl font-bold text-charcoal">
+                    {currentColor.name}
+                  </h4>
                 </div>
-              ) : (
-                <span
-                  className="w-12 h-12 rounded-full border border-charcoal/20 inline-block shadow-xs"
-                  style={{ backgroundColor: currentColor.hex }}
-                />
-              )}
-              <p className="font-serif text-lg font-bold text-charcoal">{currentColor.name}</p>
-              <p className="text-xs text-muted max-w-md mx-auto leading-relaxed">
-                Dòng sản phẩm này giữ nguyên màu vỏ đặc trưng nguyên bản (Apothecary / Vỏ hộp thiếc kim loại) cổ điển sang trọng, không dùng phẩm màu công nghiệp.
-              </p>
+                <p className="text-xs sm:text-sm text-muted max-w-md mx-auto leading-relaxed">
+                  Dòng {currentVessel.name} được chế tác tôn trọng vẻ đẹp vật liệu nguyên bản, tạo điểm nhấn mộc mạc và sang trọng cho không gian sống mà không qua xử lý nhuộm màu công nghiệp.
+                </p>
+              </div>
             </div>
           )}
         </div>

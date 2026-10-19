@@ -5,10 +5,10 @@ export const STORE_CONFIG = {
   botToken: import.meta.env.VITE_TELEGRAM_BOT_TOKEN ?? '',
   chatId: import.meta.env.VITE_TELEGRAM_CHAT_ID ?? '',
   shopTelegramUsername: import.meta.env.VITE_TELEGRAM_SHOP_USERNAME ?? 'moodscent_bot',
-  hotline: '0988.888.888',
+  hotline: '0967.233.820',
   bank: {
     bankId: 'MB',
-    accountNo: '0988888888',
+    accountNo: '0967233820',
     accountName: 'MOOD AND SCENT STUDIO',
   },
 };
