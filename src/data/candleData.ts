@@ -161,40 +161,64 @@ export const JAR_VESSELS: JarVesselItem[] = [
 // ================= DANH MỤC MÙI HƯƠNG (ẢNH NGUYÊN LIỆU THẬT) =================
 export const SCENTS: ScentItem[] = [
   {
-    id: 'unscented',
-    name: 'Không mùi (Unscented)',
-    note: 'Sáp đậu nành & sáp ong hữu cơ tự nhiên nguyên bản, sạch không khói.',
-    image: 'https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=600&q=80',
+    id: 'wood_sage',
+    name: 'Wood Sage & Sea Salt (Muối Biển & Xô Thơm)',
+    note: 'Muối biển khoáng đạt, cây xô thơm thanh mát kết hợp nốt gỗ xạ hương mộc mạc, tự do.',
   },
   {
-    id: 'whitetea',
-    name: 'White Tea & Fig',
-    note: 'Trà trắng thanh khiết, quả sung chín mọng & xạ hương ấm dịu.',
-    image: 'https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80',
+    id: 'coconut_lime',
+    name: 'Coconut Lime Verbena (Chanh & Kem Dừa)',
+    note: 'Hương chanh ngọt mát, tép cam quýt tươi hòa quyện lớp kem dừa nhiệt đới béo ngậy.',
   },
   {
-    id: 'santaclaus',
-    name: 'Santal 33 (Gỗ Đàn Hương)',
-    note: 'Gỗ đàn hương Úc, tuyết tùng trầm ấm & bạch đậu khấu sang trọng.',
-    image: 'https://images.pexels.com/photos/5782712/pexels-photo-5782712.jpeg?auto=compress&cs=tinysrgb&w=600',
+    id: 'whitetea_ginger',
+    name: 'White Tea & Ginger (Trà Trắng & Gừng)',
+    note: 'Trà trắng thanh khiết, gừng ấm nồng kết hợp cam bergamot thảo mộc và nền gỗ trầm thư thái.',
   },
   {
-    id: 'lavender',
-    name: 'French Lavender',
-    note: 'Oải hương vùng Provence Pháp giúp thư giãn sâu, giảm mệt mỏi.',
-    image: 'https://images.pexels.com/photos/414949/pexels-photo-414949.jpeg?auto=compress&cs=tinysrgb&w=600',
+    id: 'coffee_mocha',
+    name: 'Coffee & Mocha (Cà Phê Rang & Mocha)',
+    note: 'Hạt cà phê nguyên chất mới xay, đậm đà vị Espresso có đường và lớp kem mocha ngọt ngào ấm cúng.',
   },
   {
-    id: 'peony',
-    name: 'Peony & Blush Suede',
-    note: 'Hoa mẫu đơn bung nở, táo đỏ giòn tan & da lộn mềm mại quyến rũ.',
-    image: 'https://images.pexels.com/photos/5566042/pexels-photo-5566042.jpeg?auto=compress&cs=tinysrgb&w=600',
+    id: 'green_tea',
+    name: 'Green Tea & Bergamot (Trà Xanh & Hoa Trà)',
+    note: 'Cam quýt xanh, cam bergamot, hoa hồng dịu nhẹ, hoa trà xanh thanh tao và xạ hương quả mọng.',
   },
   {
-    id: 'vanilla',
-    name: 'Warm Vanilla & Amber',
-    note: 'Vani Madagascar béo ngọt kết hợp hổ phách ấm áp như ôm ấp.',
-    image: 'https://images.pexels.com/photos/14381802/pexels-photo-14381802.jpeg?auto=compress&cs=tinysrgb&w=600',
+    id: 'cherry_blossom',
+    name: 'Japanese Cherry Blossom (Hoa Anh Đào)',
+    note: 'Cánh hoa anh đào Nhật Bản bung nở yêu kiều, hoa hồng ngọt ngào trên lớp nền gỗ xạ hương ấm áp.',
+  },
+  {
+    id: 'bobbi_beach',
+    name: 'Bobbi Brown Beach (Gió Biển Mùa Hè)',
+    note: 'Hương hoa nhài xanh thanh khiết, hoa oải hương tươi mát cùng làn gió biển ngập tràn ánh nắng.',
+  },
+  {
+    id: 'sandalwood',
+    name: 'Sandalwood & Bergamot (Gỗ Đàn Hương)',
+    note: 'Gỗ đàn hương quý phái, cam bergamot thảo dược cay nồng, hoa oải hương và xạ hương rêu rừng tĩnh tâm.',
+  },
+  {
+    id: 'rose_vanilla',
+    name: 'Rose Vanilla (Hoa Hồng & Vani Ngọt)',
+    note: 'Hoa phong lữ tươi tắn, tép cam quýt mọng nước, hoa hồng nhung kiêu kỳ quyện cùng vani ngọt ngào.',
+  },
+  {
+    id: 'blacktea_clove',
+    name: 'Black Tea & Clove (Trà Đen & Đinh Hương)',
+    note: 'Vị chanh ngọt sảng khoái, trà đen đậm đà ướp hoa oải hương kết hợp nốt gỗ đinh hương cay ấm sâu lắng.',
+  },
+  {
+    id: 'jasmine_type',
+    name: 'Jasmine Bloom (Hoa Nhài Non & Đàn Hương)',
+    note: 'Cam bergamot tươi mát, hoa nhài non chớm nở thanh tao, đọng lại vị ngọt dịu của vani và gỗ đàn hương.',
+  },
+  {
+    id: 'dark_musk',
+    name: 'Dark Musk Fragrance (Xạ Hương Đen & Hoắc Hương)',
+    note: 'Tầng hương phức hợp bí ẩn từ xạ hương đen, hoắc hương, nụ đinh hương, oải hương, hoa hồng và bạc hà the mát.',
   },
 ];
 
